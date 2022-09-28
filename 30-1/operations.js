@@ -56,21 +56,21 @@ function mode(values) {
                 throw new ExpressError(`${val} is not a number`, 400);
             }
         }
-        if(values.length === 1){
+        if (values.length === 1) {
             return values[0];
         }
         let maxcount = 0;
         let mode;
         const counted = [];
-        for( let i = 0; i < values.length; i++){
-            if(!counted.includes(values[i])){
+        for (let i = 0; i < values.length; i++) {
+            if (!counted.includes(values[i])) {
                 counted.push(values[i]);
                 let currcount = 1;
-                for( let j = i+1; j < values.length; j++){
-                    if(values[j] === values[i]){
+                for (let j = i + 1; j < values.length; j++) {
+                    if (values[j] === values[i]) {
                         currcount++;
                     }
-                    if(currcount > maxcount){
+                    if (currcount > maxcount) {
                         mode = values[i];
                         maxcount = currcount;
                     }
