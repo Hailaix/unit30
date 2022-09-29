@@ -21,7 +21,7 @@ router.post('/', function (req, res, next) {
         if (name && price) {
             const newItem = { name, price };
             items.push(newItem);
-            return res.json({ "added": newItem });
+            return res.status(201).json({ "added": newItem });
         }
         else {
             throw new ExpressError("Name and Price Required fields", 400);
